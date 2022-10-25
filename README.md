@@ -10,14 +10,18 @@ The features for the application are :-
 
 This repository only provides an API and no user interface for the application.
 
-To start the development server use the command:  node ace serve —watch
-
-To build for production use : node ace build --production
+To start the development server copy the file .env.example to .env this will allow access to all configurations 
+use the command:  node ace serve —watch to run the server
 
 To run migration use : node ace migration:run
 
+To build for production use : node ace build --production
+
 Then cd build
 node server.js
+
+
+The endpoints:
 
 to login use 
 
@@ -25,7 +29,10 @@ POST : /login
 
 providing email and password, the response will contain a user_token and user_details. The application uses redis to manage tokens, these tokens are stored and validated using a remote redis store
 
-to list users use
+User Endpoints - These endpoints are authenticated use the credentials : {"email": "griffinmuteti31@gmail.com",
+    "password": "1234" } to generate a token then use that token in the following endpoints.
+
+Listing users :
 
 GET :/users
 
@@ -39,4 +46,4 @@ to get user_logs use
 
 GET :/user_logs/{user_id}
 
-User logs are recorded automatically everytime a user token is used to perform an action.
+User logs are recorded automatically every time a user token is used to perform an action.
