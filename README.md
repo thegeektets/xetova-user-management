@@ -32,6 +32,8 @@ providing email and password, the response will contain a user_token and user_de
 User Endpoints - These endpoints are authenticated use the credentials : {"email": "griffinmuteti31@gmail.com",
     "password": "1234" } to generate a token then use that token in the following endpoints.
 
+Sample Token : Y2w5bzIzaTh1MDAwMHI3eGRlZHo0Ymc2cg.4-rbnVjDOZF-yBHnofUZTnu5W789mgYHU2R3CoZSJuUBPqAOkySE61ez9RuX
+
 Listing users :
 
 GET :/users
