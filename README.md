@@ -23,7 +23,7 @@ to login use
 
 POST : /login
 
-providing email and password, the response will contain a user_token and user_details.
+providing email and password, the response will contain a user_token and user_details. The application uses redis to manage tokens, these tokens are stored and validated using a remote redis store
 
 to list users use
 

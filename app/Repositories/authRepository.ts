@@ -3,7 +3,7 @@ import Hash from '@ioc:Adonis/Core/Hash'
 
 
 
-export default class PasswordRepository {
+export default class AuthRepository {
 
     async loginUser(auth, data) {
         let { email, password } = data;
@@ -32,8 +32,14 @@ export default class PasswordRepository {
 
         const isSame = await Hash.verify(userPassword, password);
 
+        console.log("isSame", isSame);
+
         if (isSame) {
             const token = await auth.use('api').generate(user)
+
+            console.log("token", token);
+
+
             return {
                 statusCode: 200,
                 data: {
